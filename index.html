@@ -425,24 +425,25 @@ canvas { display: block; width: 100%; }
   .header { margin-bottom: 4px; padding-bottom: 4px; border-bottom: none; }
   .logo-icon { display: none; }
   .site-tag { display: none; }
-  .page-title { font-size: 14px; letter-spacing: 0.5px; }
+  .page-title { font-size: 22px; letter-spacing: 1px; }
 
   /* Hide intro + tab bar */
   .intro-bar { display: none !important; }
   .mobile-nav { display: none !important; }
 
   /* Single column — everything visible, no tab switching */
-  .main-grid { display: flex; flex-direction: column; gap: 0; }
-  #tab-params, #tab-chart, #tab-data, .right-col { display: block !important; }
+  .main-grid { display: flex; flex-direction: column; gap: 0; width: 100%; }
+  #tab-params, #tab-chart, #tab-data, .right-col { display: block !important; width: 100%; }
 
   /* ── PARAMS: ultra-compact ── */
-  #tab-params { background: transparent; border: none; }
+  #tab-params { background: transparent; border: none; width: 100%; box-sizing: border-box; }
   #tab-params::before { display: none; }
   #tab-params .panel-header { display: none; }
 
   /* 2-col grid: presets full-width, then Energy+HopUp side by side, BB Weight full-width */
   #tab-params .panel-body {
     padding: 0;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 8px;
@@ -475,9 +476,9 @@ canvas { display: block; width: 100%; }
   /* Sliders: hide numeric input, keep range */
   .slider-wrap .input-row { display: none; }
   .slider-wrap { gap: 0; }
-  input[type=range] { margin: 0; height: 28px; padding: 10px 0; }
-  input[type=range]::-webkit-slider-thumb { width: 16px; height: 16px; }
-  input[type=range]::-webkit-slider-runnable-track { height: 3px; }
+  input[type=range] { margin: 0; height: 32px; padding: 10px 0; }
+  input[type=range]::-webkit-slider-thumb { width: 20px; height: 20px; }
+  input[type=range]::-webkit-slider-runnable-track { height: 4px; }
   .slider-labels { display: none; }
   #hopHint { display: none; }
 

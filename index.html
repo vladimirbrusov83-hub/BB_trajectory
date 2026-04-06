@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BB Trajectory Calculator | Midwest Airsoft Hub</title>
+<title>Airsoft Ballistics</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -422,10 +422,10 @@ canvas { display: block; width: 100%; }
 
   /* Header: tiny */
   .status-bar { display: none; }
-  .header { margin-bottom: 4px; padding-bottom: 4px; }
+  .header { margin-bottom: 4px; padding-bottom: 4px; border-bottom: none; }
   .logo-icon { display: none; }
   .site-tag { display: none; }
-  .page-title { font-size: 15px; }
+  .page-title { font-size: 14px; letter-spacing: 0.5px; }
 
   /* Hide intro + tab bar */
   .intro-bar { display: none !important; }
@@ -442,13 +442,13 @@ canvas { display: block; width: 100%; }
   #tab-params .panel-body { padding: 0; }
 
   /* Presets: tight row */
-  #presetGroup { margin-bottom: 6px !important; }
+  #presetGroup { margin-bottom: 4px !important; }
   #presetGroup > .input-label { display: none; }
   .preset-grid { grid-template-columns: repeat(4, 1fr); gap: 3px; margin-bottom: 0; }
-  .preset-btn { font-size: 7px; line-height: 1.2; padding: 5px 2px; min-height: 28px; border-color: var(--border); }
+  .preset-btn { font-size: 7px; line-height: 1.1; padding: 3px 2px; min-height: 22px; border-color: var(--border); }
 
   /* Param rows: label + slider only */
-  .input-group { margin-bottom: 3px; }
+  .input-group { margin-bottom: 2px; }
   .input-label {
     font-size: 9px; margin-bottom: 0; letter-spacing: 1.5px;
     display: flex; justify-content: space-between;
@@ -460,15 +460,15 @@ canvas { display: block; width: 100%; }
   }
   .slider-wrap .input-row { display: none; }
   .slider-wrap { gap: 0; }
-  input[type=range] { height: 3px; margin: 1px 0; }
-  input[type=range]::-webkit-slider-thumb { width: 20px; height: 20px; }
+  input[type=range] { height: 3px; margin: 2px 0; }
+  input[type=range]::-webkit-slider-thumb { width: 22px; height: 22px; }
   .slider-labels { display: none; }
   #hopHint { display: none; }
 
-  /* BB weight dropdown */
+  /* BB weight dropdown — 16px prevents iOS zoom */
   .input-row { height: 28px; }
-  .input-row select { font-size: 16px !important; padding: 3px 8px; }
-  .input-row input { font-size: 16px !important; padding: 3px 8px; }
+  .input-row select { font-size: 16px !important; padding: 0 6px; height: 28px; }
+  .input-row input { font-size: 16px !important; padding: 0 6px; }
 
   /* Hide secondary controls */
   #launchAngleGroup { display: none; }
@@ -579,8 +579,8 @@ canvas { display: block; width: 100%; }
     <div class="logo-area">
       <div class="logo-icon">⊕</div>
       <div>
-        <div class="site-tag">Midwest Airsoft Hub</div>
-        <div class="page-title">BB Trajectory Calculator</div>
+        <div class="site-tag">Ballistics Calculator</div>
+        <div class="page-title">Airsoft Ballistics</div>
       </div>
     </div>
     <div class="status-bar">

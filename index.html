@@ -95,6 +95,13 @@ body::after {
   text-transform: uppercase; line-height: 1;
 }
 
+.page-subtitle {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px; color: var(--text-dim);
+  line-height: 1.5; margin-top: 5px;
+  max-width: 420px;
+}
+
 .status-bar {
   font-family: 'DM Mono', monospace;
   font-size: 10px; color: var(--green);
@@ -428,6 +435,7 @@ canvas { display: block; width: 100%; }
   .header { margin-bottom: 4px; padding-bottom: 4px; border-bottom: none; }
   .logo-icon { display: none; }
   .site-tag { display: none; }
+  .page-subtitle { display: none; }
   .page-title { font-size: 22px; letter-spacing: 1px; }
 
   /* Hide intro + tab bar */
@@ -680,6 +688,7 @@ canvas { display: block; width: 100%; }
       <div>
         <div class="site-tag">MIDWESTAIRSOFT.SPACE</div>
         <div class="page-title">Airsoft Ballistics</div>
+        <div class="page-subtitle">Pick your gun power and BB weight, adjust the hop-up slider until the green line flies flat — then read exactly where to aim at every distance.</div>
       </div>
     </div>
     <div class="status-bar">
@@ -1604,5 +1613,6 @@ window.addEventListener('resize', calculate);
 </script>
 </body>
 </html>
+
 
 

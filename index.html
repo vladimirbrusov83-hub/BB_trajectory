@@ -3,7 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Airsoft Ballistics — Midwest Airsoft Hub</title>
+<title>Airsoft Ballistics Calculator — BB Trajectory, Hop-Up &amp; Range | Midwest Airsoft Hub</title>
+<meta name="description" content="Free airsoft ballistics calculator. Enter your joules and BB weight, dial in hop-up, and see the exact BB trajectory at every distance. Works for AEG, HPA, DMR, and sniper rifles.">
+<meta name="keywords" content="airsoft ballistics calculator, BB trajectory, hop-up calculator, airsoft range calculator, BB drop chart, airsoft joules to FPS, Magnus effect airsoft, airsoft effective range, AEG calculator, HPA airsoft, airsoft sniper range">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Airsoft Ballistics Calculator — BB Trajectory &amp; Hop-Up">
+<meta property="og:description" content="See exactly where your BB lands at every distance. Adjust joules, BB weight, and hop-up — get a live trajectory chart and aim point table.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Midwest Airsoft Hub">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Airsoft Ballistics Calculator",
+  "description": "Interactive airsoft BB trajectory calculator with hop-up, drag, and Magnus effect modeling. Calculate effective range, BB drop, and aim point for any airsoft gun.",
+  "applicationCategory": "SportsApplication",
+  "operatingSystem": "Any",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Midwest Airsoft Hub",
+    "url": "https://www.midwestairsoft.space"
+  },
+  "keywords": "airsoft, BB trajectory, hop-up, ballistics, airsoft calculator, AEG, HPA, sniper"
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -653,6 +676,28 @@ canvas { display: block; width: 100%; }
   .physics-title { font-size: 24px; margin-bottom: 18px; }
 }
 
+/* ── SEO text block ── */
+.seo-block {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  background: rgba(200,240,50,0.02);
+}
+.seo-block h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px; letter-spacing: 2px;
+  color: var(--text-dim); margin-bottom: 14px;
+}
+.seo-block p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px; color: var(--text-dim);
+  line-height: 1.7; margin-bottom: 10px;
+}
+.seo-block p:last-child { margin-bottom: 0; }
+.seo-block strong { color: var(--text); }
+.seo-block a { color: var(--green-dim); text-decoration: none; }
+.seo-block a:hover { color: var(--green); }
+
 /* ── Site nav (matches midwestairsoft.space) ── */
 .site-nav {
   position: sticky; top: 0; z-index: 200;
@@ -741,7 +786,7 @@ canvas { display: block; width: 100%; }
       <div class="logo-icon">⊕</div>
       <div>
         <div class="site-tag">MIDWESTAIRSOFT.SPACE</div>
-        <div class="page-title">Airsoft Ballistics</div>
+        <h1 class="page-title">Airsoft Ballistics Calculator</h1>
         <div class="page-subtitle">Pick your gun power and BB weight, adjust the hop-up slider until the green line flies flat — then read exactly where to aim at every distance.</div>
       </div>
     </div>
@@ -986,7 +1031,7 @@ canvas { display: block; width: 100%; }
 
 <section class="physics-section">
   <div class="physics-inner">
-    <div class="physics-title">How the model works</div>
+    <h2 class="physics-title">How the Airsoft Ballistics Model Works</h2>
     <div class="physics-grid">
 
       <div class="physics-card">
@@ -1020,6 +1065,15 @@ canvas { display: block; width: 100%; }
       </div>
 
     </div>
+
+    <div class="seo-block">
+      <h2>Airsoft BB Trajectory &amp; Hop-Up Calculator</h2>
+      <p>This free <strong>airsoft ballistics calculator</strong> simulates the full flight path of a BB based on your gun's muzzle energy (joules), BB weight (grams), and hop-up backspin setting. It's designed for <strong>AEG rifles</strong>, <strong>HPA guns</strong>, <strong>DMRs</strong>, and <strong>airsoft sniper rifles</strong> at any power level.</p>
+      <p>The <strong>hop-up</strong> system applies Magnus effect lift to counteract gravity. Dialing it in correctly is the single biggest factor in your effective range. This calculator shows you exactly what happens to your BB at every yard — so you stop guessing and start hitting.</p>
+      <p>Use the <strong>BB drop chart</strong> to find your aimpoint at 25, 30, 40, and 50 yards. Convert joules to FPS for any BB weight. Understand why a <strong>0.25g BB at 1.5J</strong> performs differently than a <strong>0.40g BB at 2.3J</strong>, even at the same effective range.</p>
+      <p>Built for the Midwest airsoft community by <a href="https://www.midwestairsoft.space">Midwest Airsoft Hub</a> — your source for local airsoft fields, events, and gear guides in the Midwest.</p>
+    </div>
+
   </div>
 </section>
 
@@ -1706,6 +1760,7 @@ window.addEventListener('resize', calculate);
 </script>
 </body>
 </html>
+
 
 
 

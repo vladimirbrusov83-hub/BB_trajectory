@@ -599,6 +599,60 @@ canvas { display: block; width: 100%; }
   .advice-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
 }
 
+/* ── Physics section ── */
+.physics-section {
+  border-top: 1px solid var(--border-bright);
+  margin-top: 56px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.physics-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 48px;
+}
+.physics-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--text-bright); margin-bottom: 28px;
+}
+.physics-title::after {
+  content: '';
+  display: block; width: 28px; height: 2px;
+  background: var(--green); margin-top: 8px;
+}
+.physics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-bright);
+  border: 1px solid var(--border-bright);
+}
+.physics-card {
+  background: var(--panel);
+  padding: 20px 22px;
+  transition: background 0.2s;
+}
+.physics-card:hover { background: var(--panel2); }
+.physics-card-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--green); margin-bottom: 10px;
+}
+.physics-card p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px; color: var(--text); line-height: 1.65;
+}
+@media (max-width: 900px) {
+  .physics-grid { grid-template-columns: repeat(2, 1fr); }
+  .physics-inner { padding: 0 20px; }
+}
+@media (max-width: 560px) {
+  .physics-grid { grid-template-columns: 1fr; }
+  .physics-inner { padding: 0 14px; }
+  .physics-section { margin-top: 32px; padding-top: 28px; padding-bottom: 28px; }
+  .physics-title { font-size: 24px; margin-bottom: 18px; }
+}
+
 /* ── Site nav (matches midwestairsoft.space) ── */
 .site-nav {
   position: sticky; top: 0; z-index: 200;
@@ -929,6 +983,45 @@ canvas { display: block; width: 100%; }
   </nav>
 
 </div><!-- /wrapper -->
+
+<section class="physics-section">
+  <div class="physics-inner">
+    <div class="physics-title">How the model works</div>
+    <div class="physics-grid">
+
+      <div class="physics-card">
+        <div class="physics-card-label">Projectile Motion</div>
+        <p>The BB is treated as a rigid sphere launched at a set angle. Gravity pulls it down at 9.8 m/s² while drag slows it horizontally. Both forces are calculated in small time steps (every 2 ms) to build the full flight path you see on the chart.</p>
+      </div>
+
+      <div class="physics-card">
+        <div class="physics-card-label">Air Drag</div>
+        <p>Drag force depends on air density, the BB's cross-sectional area, velocity squared, and a drag coefficient (Cd ≈ 0.47 for a sphere). As the BB slows down, drag decreases — so it loses speed faster at the start of flight than at the end.</p>
+      </div>
+
+      <div class="physics-card">
+        <div class="physics-card-label">Hop-Up (Magnus Effect)</div>
+        <p>Hop-up puts backspin on the BB. Backspin creates a pressure difference above and below the ball — lower pressure on top pulls it upward (Magnus lift). At 50% hop-up this lift exactly cancels gravity, producing a flat shot. Below 50% the BB drops; above 50% it rises.</p>
+      </div>
+
+      <div class="physics-card">
+        <div class="physics-card-label">Muzzle Velocity from Joules</div>
+        <p>The calculator converts joules to muzzle velocity using KE = ½mv². A 0.25g BB at 1.5J leaves the barrel at about 110 m/s (360 fps). Heavier BBs fly slower from the same joule rating but retain energy better at distance.</p>
+      </div>
+
+      <div class="physics-card">
+        <div class="physics-card-label">Effective Range</div>
+        <p>Effective range is the farthest distance where the BB stays within ±8 inches (±20 cm) of your aim point — roughly the size of a person's torso. Past that point the BB has dropped or risen too far to reliably hit a target without holdover correction.</p>
+      </div>
+
+      <div class="physics-card">
+        <div class="physics-card-label">Model Limitations</div>
+        <p>This is a simplified model. It assumes calm air (no wind unless you enter it), consistent hop-up along the full flight, and standard sea-level atmosphere. Real-world results vary with barrel length, inner barrel quality, and BB roundness.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <span>© 2026 Midwest Airsoft Hub · Airsoft Ballistics</span>
@@ -1613,6 +1706,7 @@ window.addEventListener('resize', calculate);
 </script>
 </body>
 </html>
+
 
 
 
